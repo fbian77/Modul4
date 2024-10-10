@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.GregorianCalendar;
 
 public class Artikel {
@@ -5,10 +6,10 @@ public class Artikel {
 	private String nummer;
 	private String bezeichnung;
 	private double einkaufspreis;
-	private GregorianCalendar ablaufdatum;
+	private LocalDate ablaufdatum;
 	private int kategorienummer;
 	
-	public Artikel(String nummer, String bezeichnung, double einkaufspreis, GregorianCalendar ablaufdatum,
+	public Artikel(String nummer, String bezeichnung, double einkaufspreis, LocalDate ablaufdatum,
 			int kategorienummer) {
 		super();
 		this.nummer = nummer;
@@ -42,11 +43,11 @@ public class Artikel {
 		this.einkaufspreis = einkaufspreis;
 	}
 
-	public GregorianCalendar getAblaufdatum() {
+	public LocalDate getAblaufdatum() {
 		return ablaufdatum;
 	}
 
-	public void setAblaufdatum(GregorianCalendar ablaufdatum) {
+	public void setAblaufdatum(LocalDate ablaufdatum) {
 		this.ablaufdatum = ablaufdatum;
 	}
 
@@ -57,7 +58,15 @@ public class Artikel {
 	public void setKategorienummer(int kategorienummer) {
 		this.kategorienummer = kategorienummer;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "Artikel{" +
+				"nummer='" + nummer + '\'' +
+				", bezeichnung='" + bezeichnung + '\'' +
+				", einkaufspreis=" + einkaufspreis +
+				", ablaufdatum=" + ablaufdatum +
+				", kategorienummer=" + kategorienummer +
+				'}';
+	}
 }
